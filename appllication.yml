@@ -1,0 +1,33 @@
+server:
+  port: 9007
+eureka:
+  client: #客户端注册进eureka服务列表内
+    service-url:
+      defaultZone: http://eureka8091.com:8091/eureka
+  instance:
+    instance-id: configserver-9007
+    prefer-ip-address: true
+  spring:
+    application:
+    name: config-server
+    cloud:
+      config:
+        server:
+          git:
+            uri: https://github.com/HeNanFei/SpringCloudConfig.git
+              username: 2531700373@qq.com
+              password: Zjjwan1314
+              #超时时间
+              timeout: 5
+              #分⽀
+              default-label: master
+
+#              多种访问路径，可以通过启动⽇志去查看
+#              例⼦ http://localhost:9100/product-service.yml
+              /{name}-{profiles}.properties
+              /{name}-{profiles}.yml
+              /{name}-{profiles}.json
+              /{label}/{name}-{profiles}.yml
+#              name 服务器名称
+#              profile 环境名称，开发、测试、⽣产
+#              lable 仓库分⽀、默认master分⽀
