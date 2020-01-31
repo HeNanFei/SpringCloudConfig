@@ -1,18 +1,19 @@
 spring:
   profiles:
     active:
-    - dev
+    - test
 ---
+server:
+  port: 9008
 spring:
   profiles: dev     #开发环境
-  application: 
-    name: microservicecloud-config-atguigu-dev
+  
 ---
+server: 
+  port: 9008
 spring:
   profiles: test   #测试环境
-  application: 
-    name: microservicecloud-config-atguigu-test
+  server: 
+    port: 9008
 #  请保存为UTF-8格式
  
- 
-
