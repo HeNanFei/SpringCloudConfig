@@ -4,16 +4,15 @@ spring:
     - test
 ---
 server:
-  port: 9008
+  port: 9010
 spring:
   profiles: dev     #开发环境
   
 ---
 server: 
-  port: 9008
+  port: 9010
 spring:
   profiles: test   #测试环境
-  server: 
-    port: 9008
+  
 #  请保存为UTF-8格式
  
