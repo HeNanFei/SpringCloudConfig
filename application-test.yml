@@ -1,17 +1,21 @@
 spring:
   profiles:
-    active:
-    - test
+    active: test
 ---
 server:
   port: 9010
 spring:
-  profiles: dev     #开发环境
+  profiles: dev
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka8091.com:8091/eureka
 ---
-server: 
+server:
   port: 9011
 spring:
-  profiles: test   #测试环境
-
-#  请保存为UTF-8格式
- 
+  profiles: test
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka8091.com:8091/eureka
